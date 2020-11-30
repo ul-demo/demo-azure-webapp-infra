@@ -13,6 +13,17 @@ jobs:
         with:
           ref: main
 
+      - name: Restore node_modules from cache
+        id: restoreNodeModules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package*.json') }}
+
+      - name: npm ci
+        if: steps.restoreNodeModules.outputs.cache-hit != 'true'
+        run: npm ci
+
       - name: Pulumi up
         uses: ./.github/actions/pulumi-up
         with:

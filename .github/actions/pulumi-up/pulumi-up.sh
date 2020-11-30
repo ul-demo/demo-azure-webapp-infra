@@ -14,8 +14,5 @@ pulumi login --cloud-url azblob://pulumi
 echo "Selecting stack..."
 pulumi stack select $PULUMI_STACK
 
-echo "Running npm ci..."
-npm ci
-
 echo "Running pulumi up..."
 pulumi up --skip-preview --yes
