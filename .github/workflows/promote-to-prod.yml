@@ -1,0 +1,30 @@
+name: Promote to prod
+
+on:
+  workflow_dispatch:
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: main
+
+      - name: Pulumi up
+        uses: ./.github/actions/pulumi-up
+        with:
+          pulumi-azure-storage-account: ${{ secrets.PULUMI_AZURE_STORAGE_ACCOUNT }}
+          pulumi-azure-storage-key: ${{ secrets.PULUMI_AZURE_STORAGE_KEY }}
+          pulumi-stack: demo-azure-webapp-prod
+          pulumi-stack-passphrase: ${{ secrets.PULUMI_STACK_PASSPHRASE_PROD }}
+
+      - name: Create tag
+        run: |
+          git config user.email "github@ulaval.ca"
+          git config user.name "Github actions"
+          tagName=v`TZ=America/New_York date +"%Y-%m-%d-%H-%M-%S"`
+          git tag -m "Release to prod" -f $tagName
+          git push origin $tagName

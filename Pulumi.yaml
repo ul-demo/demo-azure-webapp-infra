@@ -1,0 +1,3 @@
+name: demo-azure-webapp
+runtime: nodejs
+description: Projet démo visant à tester le servie Webapp for containers

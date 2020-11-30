@@ -1,0 +1,12 @@
+encryptionsalt: v1:CHbhJP/r9u4=:v1:F7oAhleftcom1BmG:lmItQCB2n3azFZ7/fezJoYxwZqzSNw==
+config:
+  azure:clientId: ae874ae3-5423-445a-bc29-28bed0ebd661
+  azure:clientSecret:
+    secure: v1:Rk4JOsDO3xBn/gpm:RX4NNHR1yGt84dd0XFZNPyuuvk1NhsHPUyVmBItQSWLi4cS3gX/iqmxIF1Gyit2mbM8=
+  azure:environment: public
+  azure:location: CanadaCentral
+  azure:subscriptionId: 792a7eaf-b31d-469c-beaf-fc2f288c70fc
+  azure:tenantId: 56778bd5-6a3f-4bd3-a265-93163e4d5bfe
+  demo-azure-webapp:dockerRegistryPassword:
+    secure: v1:uuIP50XGLg8mchKZ:C2T84vN1p4PUvpQ6sthrI6E4slYd8n50PYwexXsh+KYVARA3y1CBei9yMVxymoyG
+  demo-azure-webapp:dockerImageTag: develop
