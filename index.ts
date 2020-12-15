@@ -53,6 +53,8 @@ const appService = new azure.appservice.AppService(appServiceName, {
     },
 
     tags: defaultTags,
+}, {
+    parent: resourceGroup
 });
 
 export const appEndpoint = appService.defaultSiteHostname;
