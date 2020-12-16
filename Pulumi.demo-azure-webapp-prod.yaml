@@ -4,7 +4,7 @@ config:
   azure:clientSecret:
     secure: v1:4elq2ZUXQw1PdSEz:FSSFPH31FH8vCnemvgwV9Vnf57qvx+aQCUKdu/AaPCT3W5C+0dQZwZlMCGmaaFBrl9g=
   azure:environment: public
-  azure:location: CanadaCentral
+  azure:location: CanadaEast
   azure:subscriptionId: 792a7eaf-b31d-469c-beaf-fc2f288c70fc
   azure:tenantId: 56778bd5-6a3f-4bd3-a265-93163e4d5bfe
   demo-azure-webapp:dockerRegistryPassword:
